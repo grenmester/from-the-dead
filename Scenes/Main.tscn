@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://yl1urq8sk6vy"]
+[gd_scene load_steps=10 format=4 uid="uid://cmq5ndt6q7y5h"]
 
-[ext_resource type="PackedScene" uid="uid://b4m53ragduxb6" path="res://Scenes/Player.tscn" id="1_idj7w"]
+[ext_resource type="PackedScene" uid="uid://saalq7t3ky2f" path="res://Scenes/Player.tscn" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://bk2s8pqxbmtek" path="res://Scripts/Main.gd" id="1_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://cyjwiw1sgnrud" path="res://Assets/using_tilesets_kenney_abstract_platformer_tile_sheet.webp" id="2_kln2b"]
-[ext_resource type="PackedScene" uid="uid://cvwhfoq3n2ti8" path="res://Scenes/Pufferfish.tscn" id="3_kln2b"]
-[ext_resource type="PackedScene" uid="uid://m2trcc7x7hps" path="res://Scenes/Door.tscn" id="5_v1gob"]
-[ext_resource type="PackedScene" uid="uid://cfpeme40luh7v" path="res://Scenes/Button.tscn" id="6_jw32o"]
+[ext_resource type="PackedScene" uid="uid://ylygkknlk1hx" path="res://Scenes/Pufferfish.tscn" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Door.tscn" id="5_v1gob"]
+[ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Button.tscn" id="6_jw32o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgh2o"]
 texture = ExtResource("2_kln2b")

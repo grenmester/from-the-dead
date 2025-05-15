@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvwhfoq3n2ti8"]
+[gd_scene load_steps=4 format=3 uid="uid://ylygkknlk1hx"]
 
 [ext_resource type="Script" uid="uid://chchmciemn617" path="res://Scripts/Pufferfish.gd" id="1_h0an2"]
 [ext_resource type="Texture2D" uid="uid://bjpcq27vp8w4b" path="res://Assets/pufferfish.png" id="1_yhac6"]
