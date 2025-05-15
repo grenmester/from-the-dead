@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvwhfoq3n2ti8"]
+
+[ext_resource type="Script" uid="uid://chchmciemn617" path="res://Scripts/Pufferfish.gd" id="1_h0an2"]
+[ext_resource type="Texture2D" uid="uid://bjpcq27vp8w4b" path="res://Assets/pufferfish.png" id="1_yhac6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfj3c"]
+size = Vector2(26, 26)
+
+[node name="Pufferfish" type="CharacterBody2D" groups=["button_pushers"]]
+script = ExtResource("1_h0an2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yhac6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rfj3c")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-21, 0)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rfj3c")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
