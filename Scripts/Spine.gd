@@ -18,5 +18,5 @@ func _on_body_entered(body: Node2D) -> void:
 		speed *= -1
 		$Sprite2D.flip_v = true
 		flipped = true
-	elif body.name == "Door":
+	elif body.is_in_group("doors"):
 		queue_free()
