@@ -73,7 +73,7 @@ func _input(event):
 		direction = 1
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("spines") and !is_hiding and (inhabiting != "Pufferfish" or area.flipped):
+	if area.is_in_group("spines") and !is_hiding and (inhabiting != "Pufferfish" or area.flipped or area.parent != self):
 		if inhabiting != null:
 			var corpse
 			if inhabiting == "Shell":
@@ -82,6 +82,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 				corpse = pufferfish_corpse_scene.instantiate()
 			get_tree().root.add_child(corpse)
 			corpse.position = self.global_position
+			if direction == 1:
+				corpse.get_node("Sprite2D").flip_h = true
 			$AnimatedSprite2D.play("shellless")
 			inhabiting = null
 			set_collision_layer_value(1, false)
@@ -100,7 +102,7 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 	if $AnimatedSprite2D.animation == "shoot" and $AnimatedSprite2D.frame == 2:
 		var spine = spine_scene.instantiate()
 		get_tree().root.add_child(spine)
-		spine.start($Marker2D.global_position, direction * 100)
+		spine.start(self, $Marker2D.global_position, direction * 100)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "shoot":

@@ -2,8 +2,10 @@ extends Area2D
 
 var flipped = false
 var speed
+var parent
 
-func start(pos, spd):
+func start(par, pos, spd):
+	parent = par
 	position = pos
 	speed = spd
 
