@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var level = $Level4
+@onready var level = $Level5
 
 func _ready() -> void:
 	level.get_node("Camera2D").make_current()
