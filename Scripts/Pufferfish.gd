@@ -8,11 +8,7 @@ func _ready() -> void:
 	$Timer.start()
 
 func _on_timer_timeout() -> void:
-	var spine = spine_scene.instantiate()
-	get_tree().root.add_child(spine)
-	spine.start($Marker2D.global_position, -500)
-	$Timer.wait_time = 5
-	$Timer.start()
+	$AnimatedSprite2D.play("shoot")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("spines") and area.flipped:
@@ -21,3 +17,12 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		corpse.position = self.global_position
 		queue_free()
 		area.queue_free()
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if $AnimatedSprite2D.frame == 2:
+		var spine = spine_scene.instantiate()
+		get_tree().root.add_child(spine)
+		spine.start($Marker2D.global_position, -500)
+		$Timer.wait_time = 5
+		$Timer.start()

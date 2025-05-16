@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://catflm4xdjh7e"]
 
 [ext_resource type="Script" uid="uid://cjufu4ua1ht70" path="res://Scripts/PufferfishCorpse.gd" id="1_cm4fr"]
-[ext_resource type="Texture2D" uid="uid://xk8jxnjhd0aw" path="res://Assets/pufferfish_corpse.png" id="1_tg45r"]
+[ext_resource type="Texture2D" uid="uid://bjpcq27vp8w4b" path="res://Assets/pufferfish.png" id="2_cm4fr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cm4fr"]
-size = Vector2(32, 32)
+size = Vector2(22, 12)
 
 [node name="PufferfishCorpse" type="CharacterBody2D" groups=["button_pushers", "corpses"]]
 script = ExtResource("1_cm4fr")
@@ -13,4 +13,6 @@ script = ExtResource("1_cm4fr")
 shape = SubResource("RectangleShape2D_cm4fr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_tg45r")
+texture = ExtResource("2_cm4fr")
+region_enabled = true
+region_rect = Rect2(133, 20, 23, 12)

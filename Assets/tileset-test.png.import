@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xk8jxnjhd0aw"
-path="res://.godot/imported/pufferfish_corpse.png-0430f522136f906f20d392641ea707dd.ctex"
+uid="uid://ijpgp80w4xa2"
+path="res://.godot/imported/tileset-test.png-be399bdc5af4d0faa39aa8dfaaef352e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pufferfish_corpse.png"
-dest_files=["res://.godot/imported/pufferfish_corpse.png-0430f522136f906f20d392641ea707dd.ctex"]
+source_file="res://Assets/tileset-test.png"
+dest_files=["res://.godot/imported/tileset-test.png-be399bdc5af4d0faa39aa8dfaaef352e.ctex"]
 
 [params]
 

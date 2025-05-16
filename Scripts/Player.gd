@@ -12,6 +12,10 @@ var spine_scene = preload("res://Scenes/Spine.tscn")
 var nearby_corpse = null
 var inhabiting = "Shell"
 var direction = 1;
+var is_shooting = false
+
+func _ready() -> void:
+	$AnimatedSprite2D.play("shelled")
 
 func _physics_process(delta: float) -> void:
 	if inhabiting == null or inhabiting == "Shell":
@@ -32,16 +36,10 @@ func vertical_movement():
 	velocity.y = vertical_input * speed
 
 func player_animations() -> void:
-	if inhabiting == "Shell":
-		$AnimatedSprite2D.play("shelled")
-	elif inhabiting == "Pufferfish":
-		$AnimatedSprite2D.play("pufferfish")
-	else:
-		$AnimatedSprite2D.play("shellless")
 	if Input.is_action_pressed("ui_right"):
-		$AnimatedSprite2D.flip_h = false
-	if Input.is_action_pressed("ui_left"):
 		$AnimatedSprite2D.flip_h = true
+	if Input.is_action_pressed("ui_left"):
+		$AnimatedSprite2D.flip_h = false
 
 func _input(event):
 	if event.is_action_pressed("ui_up") and is_on_floor() and !is_hiding and (inhabiting == null or inhabiting == "Shell"):
@@ -66,9 +64,9 @@ func _input(event):
 				set_collision_layer_value(1, true)
 				set_collision_mask_value(1, true)
 		elif inhabiting == "Pufferfish":
-			var spine = spine_scene.instantiate()
-			get_tree().root.add_child(spine)
-			spine.start($Marker2D.global_position, direction * 100)
+			if !is_shooting:
+				is_shooting = true
+				$AnimatedSprite2D.play("shoot")
 	if event.is_action_pressed("ui_left"):
 		direction = -1
 	if event.is_action_pressed("ui_right"):
@@ -84,6 +82,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 				corpse = pufferfish_corpse_scene.instantiate()
 			get_tree().root.add_child(corpse)
 			corpse.position = self.global_position
+			$AnimatedSprite2D.play("shellless")
 			inhabiting = null
 			set_collision_layer_value(1, false)
 			set_collision_mask_value(1, false)
@@ -96,3 +95,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	nearby_corpse = null
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if $AnimatedSprite2D.animation == "shoot" and $AnimatedSprite2D.frame == 2:
+		var spine = spine_scene.instantiate()
+		get_tree().root.add_child(spine)
+		spine.start($Marker2D.global_position, direction * 100)
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if $AnimatedSprite2D.animation == "shoot":
+		is_shooting = false
