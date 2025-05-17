@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://bk2s8pqxbmtek" path="res://Scripts/Main.gd" id="1_rgh2o"]
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="2_v1gob"]
 [ext_resource type="PackedScene" uid="uid://ylygkknlk1hx" path="res://Scenes/Pufferfish.tscn" id="3_kln2b"]
-[ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Door.tscn" id="5_v1gob"]
-[ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Button.tscn" id="6_jw32o"]
+[ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="5_v1gob"]
+[ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="6_jw32o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pbw6q"]
 size = Vector2(1150.5, 649)
@@ -43,11 +43,9 @@ closed = false
 
 [node name="Door2" parent="Level5" instance=ExtResource("5_v1gob")]
 position = Vector2(918, -130)
-id = 1
 
 [node name="Door3" parent="Level5" instance=ExtResource("5_v1gob")]
 position = Vector2(918, -33)
-id = 1
 closed = false
 
 [node name="Button0" parent="Level5" instance=ExtResource("6_jw32o")]
@@ -55,7 +53,6 @@ position = Vector2(399, -10)
 
 [node name="Button1" parent="Level5" instance=ExtResource("6_jw32o")]
 position = Vector2(1391, -10)
-id = 1
 
 [node name="Pufferfish" parent="Level5" instance=ExtResource("3_kln2b")]
 position = Vector2(1249, -19)
@@ -77,27 +74,21 @@ position = Vector2(2292, -6)
 
 [node name="Button0" parent="Level4" instance=ExtResource("6_jw32o")]
 position = Vector2(1777, -40)
-id = 2
 
 [node name="Door1" parent="Level4" instance=ExtResource("5_v1gob")]
 position = Vector2(1878, -64)
-id = 3
 
 [node name="Button1" parent="Level4" instance=ExtResource("6_jw32o")]
 position = Vector2(1973, -40)
-id = 3
 
 [node name="Door2" parent="Level4" instance=ExtResource("5_v1gob")]
 position = Vector2(2075, -64)
-id = 4
 
 [node name="Button2" parent="Level4" instance=ExtResource("6_jw32o")]
 position = Vector2(2183, -40)
-id = 4
 
 [node name="Door0" parent="Level4" instance=ExtResource("5_v1gob")]
 position = Vector2(2600, -65)
-id = 2
 
 [node name="Pufferfish0" parent="Level4" instance=ExtResource("3_kln2b")]
 position = Vector2(1927.31, -43.3382)
