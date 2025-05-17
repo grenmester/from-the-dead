@@ -1,32 +1,70 @@
-[gd_scene load_steps=7 format=3 uid="uid://n486i6qibn2m"]
+[gd_scene load_steps=11 format=3 uid="uid://n486i6qibn2m"]
 
 [ext_resource type="Script" uid="uid://cs4catt2mjyy2" path="res://Scripts/Button.gd" id="1_a506e"]
-[ext_resource type="Texture2D" uid="uid://d25rek8wb3y5y" path="res://Assets/button.png" id="2_8bxxr"]
+[ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_a506e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bxxr"]
+atlas = ExtResource("2_a506e")
+region = Rect2(32, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5xx2a"]
-atlas = ExtResource("2_8bxxr")
-region = Rect2(0, 0, 16, 16)
+atlas = ExtResource("2_a506e")
+region = Rect2(48, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbgbk"]
-atlas = ExtResource("2_8bxxr")
-region = Rect2(16, 0, 16, 16)
+atlas = ExtResource("2_a506e")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eqqv"]
+atlas = ExtResource("2_a506e")
+region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf234"]
+atlas = ExtResource("2_a506e")
+region = Rect2(32, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1278d"]
+atlas = ExtResource("2_a506e")
+region = Rect2(48, 192, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5eqqv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5xx2a")
+"texture": SubResource("AtlasTexture_8bxxr")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5xx2a")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kbgbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eqqv")
 }],
 "loop": false,
-"name": &"default",
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf234")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1278d")
+}],
+"loop": true,
+"name": &"yellow",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gf234"]
-size = Vector2(16, 16)
+size = Vector2(16, 10)
 
 [node name="Button" type="Area2D" groups=["buttons"]]
 collision_layer = 3
@@ -35,8 +73,10 @@ script = ExtResource("1_a506e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5eqqv")
+animation = &"red"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_gf234")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

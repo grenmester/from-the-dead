@@ -21,7 +21,7 @@ func _on_body_exited(body: Node2D) -> void:
 			toggled = false
 
 func on():
-	$AnimatedSprite2D.play("default")
+	$AnimatedSprite2D.play("red")
 	emit_signal("toggle", id)
 
 func off():

@@ -1,17 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://lp6v7qiytyoa"]
 
 [ext_resource type="Script" uid="uid://i3rqoo7ywvvs" path="res://Scripts/Shell.gd" id="1_jaojc"]
-[ext_resource type="Texture2D" uid="uid://xh16ukxq5s1y" path="res://Assets/Shell Spiral Cap 3x2.png" id="2_jaojc"]
+[ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_jaojc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jaojc"]
-size = Vector2(48, 36)
+size = Vector2(26, 24)
 
 [node name="Shell" type="CharacterBody2D" groups=["button_pushers", "corpses"]]
 script = ExtResource("1_jaojc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jaojc")
+region_enabled = true
+region_rect = Rect2(48, 208, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_jaojc")

@@ -1,33 +1,27 @@
 [gd_scene load_steps=9 format=3 uid="uid://ylygkknlk1hx"]
 
 [ext_resource type="Script" uid="uid://chchmciemn617" path="res://Scripts/Pufferfish.gd" id="1_h0an2"]
-[ext_resource type="Texture2D" uid="uid://bjpcq27vp8w4b" path="res://Assets/pufferfish.png" id="1_yhac6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfj3c"]
-size = Vector2(26, 26)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h0an2"]
-atlas = ExtResource("1_yhac6")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_h0an2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfj3c"]
-atlas = ExtResource("1_yhac6")
-region = Rect2(32, 0, 32, 32)
+atlas = ExtResource("2_h0an2")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3khe"]
-atlas = ExtResource("1_yhac6")
-region = Rect2(64, 0, 32, 32)
+atlas = ExtResource("2_h0an2")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qsqrp"]
-atlas = ExtResource("1_yhac6")
+atlas = ExtResource("2_h0an2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56d01"]
+atlas = ExtResource("2_h0an2")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h0an2"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h0an2")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rfj3c")
 }, {
@@ -38,15 +32,22 @@ animations = [{
 "texture": SubResource("AtlasTexture_qsqrp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h0an2")
+"texture": SubResource("AtlasTexture_56d01")
 }],
 "loop": false,
 "name": &"shoot",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfj3c"]
+size = Vector2(26, 26)
+
 [node name="Pufferfish" type="CharacterBody2D" groups=["button_pushers"]]
 script = ExtResource("1_h0an2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h0an2")
+animation = &"shoot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rfj3c")
@@ -65,10 +66,6 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_rfj3c")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_h0an2")
-animation = &"shoot"
-
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
