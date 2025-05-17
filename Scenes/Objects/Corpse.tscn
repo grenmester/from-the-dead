@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://catflm4xdjh7e"]
+
+[ext_resource type="Script" uid="uid://cjufu4ua1ht70" path="res://Scripts/Corpse.gd" id="1_omnu5"]
+[ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_f75hb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm4fr"]
+size = Vector2(26, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4x44"]
+size = Vector2(25, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoet0"]
+size = Vector2(31, 14)
+
+[node name="Corpse" type="CharacterBody2D" groups=["button_pushers", "corpses"]]
+script = ExtResource("1_omnu5")
+
+[node name="Shell" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_f75hb")
+region_enabled = true
+region_rect = Rect2(48, 208, 32, 32)
+
+[node name="ShellCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_cm4fr")
+disabled = true
+
+[node name="Pufferfish" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_f75hb")
+region_enabled = true
+region_rect = Rect2(96, 32, 32, 16)
+
+[node name="PufferfishCollider" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 2)
+shape = SubResource("RectangleShape2D_r4x44")
+disabled = true
+
+[node name="Swordfish" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_f75hb")
+region_enabled = true
+region_rect = Rect2(96, 48, 32, 16)
+
+[node name="SwordfishCollider" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_xoet0")

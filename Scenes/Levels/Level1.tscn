@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://cfswksi76oeos"]
+[gd_scene load_steps=6 format=4 uid="uid://cfswksi76oeos"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_5jgm0"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="1_36ke7"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="3_xvio3"]
+[ext_resource type="PackedScene" uid="uid://ylygkknlk1hx" path="res://Scenes/Pufferfish.tscn" id="4_4d3fe"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="4_kri6y"]
 
 [node name="Level1" type="Node2D"]
@@ -38,5 +39,10 @@ position = Vector2(744, 504)
 closed = false
 color = "green"
 
+[node name="Pufferfish" parent="." instance=ExtResource("4_4d3fe")]
+position = Vector2(552, 512)
+
 [node name="Player" parent="." instance=ExtResource("1_36ke7")]
 position = Vector2(41, 170)
+speed = 150
+gravity = 200

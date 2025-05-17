@@ -1,7 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://ylygkknlk1hx"]
+[gd_scene load_steps=11 format=3 uid="uid://ylygkknlk1hx"]
 
 [ext_resource type="Script" uid="uid://chchmciemn617" path="res://Scripts/Pufferfish.gd" id="1_h0an2"]
 [ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_h0an2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0an2"]
+atlas = ExtResource("2_h0an2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33gyv"]
+atlas = ExtResource("2_h0an2")
+region = Rect2(0, 1, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfj3c"]
 atlas = ExtResource("2_h0an2")
@@ -23,6 +31,17 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_h0an2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33gyv")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rfj3c")
 }, {
 "duration": 1.0,
@@ -36,7 +55,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"shoot",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfj3c"]
@@ -55,7 +74,6 @@ shape = SubResource("RectangleShape2D_rfj3c")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-21, 0)
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 
@@ -66,6 +84,7 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_rfj3c")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

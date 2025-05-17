@@ -4,31 +4,32 @@ signal toggle(color)
 
 @export_enum("red", "green", "yellow") var color = "red"
 var toggled = false
-var disabledButton
-var enabledButton
+var disabled_button
+var enabled_button
 var body_count = 0
+
 
 func _ready():
 	configure()
-	disabledButton.show()
+	disabled_button.show()
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: Node2D):
 	if body.is_in_group("button_pushers"):
 		body_count += 1
 		if !toggled:
-			disabledButton.hide()
-			enabledButton.show()
+			disabled_button.hide()
+			enabled_button.show()
 			emit_signal("toggle", color)
 			toggled = true
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(body: Node2D):
 	if body.is_in_group("button_pushers"):
 		body_count -= 1
 		if body_count == 0 and toggled:
-			enabledButton.hide()
-			disabledButton.show()
+			enabled_button.hide()
+			disabled_button.show()
 			emit_signal("toggle", color)
 			toggled = false
 
@@ -36,11 +37,11 @@ func _on_body_exited(body: Node2D) -> void:
 func configure():
 	match color:
 		"red":
-			disabledButton = $DisabledRedButton
-			enabledButton = $EnabledRedButton
+			disabled_button = $DisabledRedButton
+			enabled_button = $EnabledRedButton
 		"green":
-			disabledButton = $DisabledGreenButton
-			enabledButton = $EnabledGreenButton
+			disabled_button = $DisabledGreenButton
+			enabled_button = $EnabledGreenButton
 		"yellow":
-			disabledButton = $DisabledYellowButton
-			enabledButton = $EnabledYellowButton
+			disabled_button = $DisabledYellowButton
+			enabled_button = $EnabledYellowButton

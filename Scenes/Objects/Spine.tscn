@@ -1,29 +1,30 @@
 [gd_scene load_steps=4 format=3 uid="uid://w4k572b58dxg"]
 
-[ext_resource type="Script" uid="uid://ypu0fj68iyu2" path="res://Scripts/Spine.gd" id="1_ryd5v"]
-[ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_ryd5v"]
+[ext_resource type="Script" uid="uid://ypu0fj68iyu2" path="res://Scripts/Spine.gd" id="1_p7a3t"]
+[ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_e2112"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryd5v"]
-size = Vector2(13.3333, 6.66667)
+size = Vector2(26.6667, 10)
 
 [node name="Spine" type="Area2D" groups=["spines"]]
 scale = Vector2(0.3, 0.3)
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_ryd5v")
+script = ExtResource("1_p7a3t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ryd5v")
+scale = Vector2(2, 2)
+texture = ExtResource("2_e2112")
 region_enabled = true
 region_rect = Rect2(80, 36, 16, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.97364e-07, 0)
+position = Vector2(0, -1.66667)
 shape = SubResource("RectangleShape2D_ryd5v")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, 2.13163e-14)
-scale = Vector2(0.666667, 0.333333)
+position = Vector2(-2.38419e-07, -1.66667)
+scale = Vector2(1.33333, 0.5)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

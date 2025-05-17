@@ -2,20 +2,21 @@ extends StaticBody2D
 
 @export var closed = true
 @export_enum("red", "green", "yellow") var color = "red"
-var openDoor
-var closedDoor
+var open_door
+var closed_door
+
 
 func _ready():
 	match color:
 		"red":
-			openDoor = $OpenRedDoor
-			closedDoor = $ClosedRedDoor
+			open_door = $OpenRedDoor
+			closed_door = $ClosedRedDoor
 		"green":
-			openDoor = $OpenGreenDoor
-			closedDoor = $ClosedGreenDoor
+			open_door = $OpenGreenDoor
+			closed_door = $ClosedGreenDoor
 		"yellow":
-			openDoor = $OpenYellowDoor
-			closedDoor = $ClosedYellowDoor
+			open_door = $OpenYellowDoor
+			closed_door = $ClosedYellowDoor
 
 	configure()
 
@@ -34,8 +35,8 @@ func configure():
 	$CollisionShape2D.set_deferred("disabled", !closed)
 
 	if closed:
-		openDoor.hide()
-		closedDoor.show()
+		open_door.hide()
+		closed_door.show()
 	else:
-		openDoor.show()
-		closedDoor.hide()
+		open_door.show()
+		closed_door.hide()
