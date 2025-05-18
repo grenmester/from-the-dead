@@ -9,17 +9,27 @@ anchors_preset = 0
 script = ExtResource("1_tr2i4")
 
 [node name="HUD" type="Control" parent="."]
+z_index = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ResetButton" type="Button" parent="HUD"]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 8.0
+offset_right = 755.0
+offset_bottom = 39.0
+focus_mode = 0
+text = "Reset"
+
 [node name="ExitButton" type="Button" parent="HUD"]
-z_index = 1
 layout_mode = 0
 offset_left = 760.0
 offset_top = 8.0
 offset_right = 797.0
 offset_bottom = 39.0
+focus_mode = 0
 text = "Exit"
 
 [node name="LevelMenu" parent="." instance=ExtResource("1_hpc76")]
@@ -29,4 +39,5 @@ offset_bottom = 0.0
 
 [node name="Level" type="Node2D" parent="."]
 
+[connection signal="pressed" from="HUD/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="HUD/ExitButton" to="." method="_on_exit_button_pressed"]
