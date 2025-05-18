@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cfswksi76oeos"]
+[gd_scene load_steps=8 format=4 uid="uid://cfswksi76oeos"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_5jgm0"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="1_36ke7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ylygkknlk1hx" path="res://Scenes/Pufferfish.tscn" id="4_4d3fe"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="4_kri6y"]
 [ext_resource type="PackedScene" uid="uid://catflm4xdjh7e" path="res://Scenes/Objects/Corpse.tscn" id="6_4d3fe"]
+[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Finish.tscn" id="7_3ipdw"]
 
 [node name="Level1" type="Node2D"]
 
@@ -60,3 +61,6 @@ type = 3
 
 [node name="Corpse3" parent="." instance=ExtResource("6_4d3fe")]
 position = Vector2(48, 496)
+
+[node name="Finish" parent="." instance=ExtResource("7_3ipdw")]
+position = Vector2(944, 496)
