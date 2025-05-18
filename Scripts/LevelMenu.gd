@@ -22,6 +22,7 @@ func load_level(level_num: int):
 	if level_resource:
 		level_instance = level_resource.instantiate()
 		level_node.add_child(level_instance)
+		Consts.root = level_instance
 		level_instance.get_node('Camera2D').make_current()
 		level_instance.get_node('Finish').connect("win", unload_level)
 

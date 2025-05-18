@@ -19,7 +19,7 @@ func _ready():
 func _on_animated_sprite_2d_frame_changed():
 	if $AnimatedSprite2D.animation == "shoot" and $AnimatedSprite2D.frame == 2:
 		var spine = spine_scene.instantiate()
-		get_tree().root.add_child(spine)
+		Consts.root.add_child(spine)
 		spine.init(self, position, 1 if flipped else -1)
 		$Timer.wait_time = shoot_interval
 		$Timer.start()
@@ -33,7 +33,7 @@ func _on_area_2d_area_entered(area: Area2D):
 	if area.is_in_group("spines") and (area.flipped or area.parent != self):
 		var corpse = corpse_scene.instantiate()
 		corpse.init(Enums.ShellType.PUFFERFISH)
-		get_tree().root.add_child(corpse)
+		Consts.root.add_child(corpse)
 		corpse.position = self.global_position
 		corpse.sprite.flip_h = flipped
 		queue_free()

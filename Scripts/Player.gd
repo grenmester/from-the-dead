@@ -44,7 +44,7 @@ func _input(event):
 func _on_animated_sprite_2d_frame_changed():
 	if $AnimatedSprite2D.animation == "pufferfish_action" and $AnimatedSprite2D.frame == 2:
 		var spine = spine_scene.instantiate()
-		get_tree().root.add_child(spine)
+		Consts.root.add_child(spine)
 		spine.init(self, position, direction)
 	# TODO: handle swordfish action consequence
 
@@ -65,7 +65,7 @@ func _on_area_2d_area_entered(area: Area2D):
 	if shell_type != Enums.ShellType.NONE:
 		var corpse = corpse_scene.instantiate()
 		corpse.init(shell_type)
-		get_tree().root.add_child(corpse)
+		Consts.root.add_child(corpse)
 		corpse.position = global_position
 		corpse.sprite.flip_h = direction == -1
 
