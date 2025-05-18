@@ -1,12 +1,5 @@
 extends Area2D
 
-enum ShellType {
-	NORMAL,
-	NONE,
-	PUFFERFISH,
-	SWORDFISH,
-}
-
 const speed = 100
 var flipped = false
 var parent
@@ -38,8 +31,8 @@ func init(_parent, _position, _direction):
 
 
 func can_reflect(body: Node2D):
-	var is_player_in_shell = body.name == "Player" and body.shell_type == ShellType.NORMAL and body.action_in_progress
-	var is_empty_shell = body.is_in_group("corpses") and body.type == ShellType.NORMAL
+	var is_player_in_shell = body.name == "Player" and body.is_hiding()
+	var is_empty_shell = body.is_in_group("corpses") and body.type == Enums.ShellType.NORMAL
 	return is_player_in_shell or is_empty_shell
 
 

@@ -1,12 +1,5 @@
 extends CharacterBody2D
 
-enum ShellType {
-	NORMAL,
-	NONE,
-	PUFFERFISH,
-	SWORDFISH,
-}
-
 @export var flipped = false
 
 var spine_scene = preload("res://Scenes/Objects/Spine.tscn")
@@ -39,7 +32,7 @@ func _on_animated_sprite_2d_animation_finished():
 func _on_area_2d_area_entered(area: Area2D):
 	if area.is_in_group("spines") and (area.flipped or area.parent != self):
 		var corpse = corpse_scene.instantiate()
-		corpse.init(ShellType.PUFFERFISH)
+		corpse.init(Enums.ShellType.PUFFERFISH)
 		get_tree().root.add_child(corpse)
 		corpse.position = self.global_position
 		corpse.sprite.flip_h = flipped

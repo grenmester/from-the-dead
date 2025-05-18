@@ -1,14 +1,7 @@
 extends CharacterBody2D
 
-enum ShellType {
-	NORMAL,
-	NONE,
-	PUFFERFISH,
-	SWORDFISH,
-}
-
 @export var gravity = 100
-@export var type: ShellType
+@export var type: Enums.ShellType
 
 var sprite
 var collider
@@ -23,17 +16,17 @@ func _physics_process(delta: float):
 	move_and_slide()
 
 
-func init(_type: ShellType):
+func init(_type: Enums.ShellType):
 	type = _type
 
 	match type:
-		ShellType.NORMAL:
+		Enums.ShellType.NORMAL:
 			sprite = $Shell
 			collider = $ShellCollider
-		ShellType.PUFFERFISH:
+		Enums.ShellType.PUFFERFISH:
 			sprite = $Pufferfish
 			collider = $PufferfishCollider
-		ShellType.SWORDFISH:
+		Enums.ShellType.SWORDFISH:
 			sprite = $Swordfish
 			collider = $SwordfishCollider
 

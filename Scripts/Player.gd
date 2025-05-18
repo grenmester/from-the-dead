@@ -1,12 +1,5 @@
 extends CharacterBody2D
 
-enum ShellType {
-	NORMAL,
-	NONE,
-	PUFFERFISH,
-	SWORDFISH,
-}
-
 var corpse_scene = preload("res://Scenes/Objects/Corpse.tscn")
 var spine_scene = preload("res://Scenes/Objects/Spine.tscn")
 
@@ -14,7 +7,7 @@ var spine_scene = preload("res://Scenes/Objects/Spine.tscn")
 @export var gravity = 150
 @export var jump_force = -150
 
-var shell_type = ShellType.NORMAL
+var shell_type = Enums.ShellType.NORMAL
 var action_in_progress = false
 var direction = 1
 var nearby_corpse = null
@@ -39,13 +32,13 @@ func _input(event):
 	if event.is_action_pressed("ui_select"):
 		handle_action()
 	if Input.is_key_pressed(KEY_U):
-		change_shell(ShellType.NORMAL)
+		change_shell(Enums.ShellType.NORMAL)
 	if Input.is_key_pressed(KEY_I):
-		change_shell(ShellType.NONE)
+		change_shell(Enums.ShellType.NONE)
 	if Input.is_key_pressed(KEY_O):
-		change_shell(ShellType.PUFFERFISH)
+		change_shell(Enums.ShellType.PUFFERFISH)
 	if Input.is_key_pressed(KEY_P):
-		change_shell(ShellType.SWORDFISH)
+		change_shell(Enums.ShellType.SWORDFISH)
 
 
 func _on_animated_sprite_2d_frame_changed():
@@ -66,10 +59,10 @@ func _on_area_2d_area_entered(area: Area2D):
 	if !area.is_in_group("spines") or is_hiding():
 		return
 
-	if shell_type == ShellType.PUFFERFISH and !area.flipped and area.parent == self:
+	if shell_type == Enums.ShellType.PUFFERFISH and !area.flipped and area.parent == self:
 		return
 
-	if shell_type != ShellType.NONE:
+	if shell_type != Enums.ShellType.NONE:
 		var corpse = corpse_scene.instantiate()
 		corpse.init(shell_type)
 		get_tree().root.add_child(corpse)
@@ -109,11 +102,11 @@ func handle_x_movement():
 func play_animation():
 	var anim_prefix = ""
 	match shell_type:
-		ShellType.NONE:
+		Enums.ShellType.NONE:
 			anim_prefix += "naked_"
-		ShellType.PUFFERFISH:
+		Enums.ShellType.PUFFERFISH:
 			anim_prefix += "pufferfish_"
-		ShellType.SWORDFISH:
+		Enums.ShellType.SWORDFISH:
 			anim_prefix += "swordfish_"
 
 	var anim_type = "walk" if abs(velocity.x) > 0.1 else "idle"
@@ -127,36 +120,36 @@ func can_jump() -> bool:
 
 
 func is_hiding() -> bool:
-	return shell_type == ShellType.NORMAL and action_in_progress
+	return shell_type == Enums.ShellType.NORMAL and action_in_progress
 
 func handle_action():
 	match shell_type:
-		ShellType.NORMAL:
+		Enums.ShellType.NORMAL:
 			action_in_progress = !action_in_progress
-		ShellType.NONE:
+		Enums.ShellType.NONE:
 			if nearby_corpse:
 				change_shell(nearby_corpse.type)
 				nearby_corpse.queue_free()
-		ShellType.PUFFERFISH:
+		Enums.ShellType.PUFFERFISH:
 			if !action_in_progress:
 				action_in_progress = true
-		ShellType.SWORDFISH:
+		Enums.ShellType.SWORDFISH:
 			if !action_in_progress:
 				action_in_progress = true
 
 
-func change_shell(_shell_type: ShellType):
+func change_shell(_shell_type: Enums.ShellType):
 	shell_type = _shell_type
 	action_in_progress = false
 	update_corpse_collision(shell_type)
 
 
-func update_corpse_collision(_shell_type: ShellType):
+func update_corpse_collision(_shell_type: Enums.ShellType):
 	# No collisions with corpses for naked crabs
-	set_collision_layer_value(1, _shell_type != ShellType.NONE)
-	set_collision_mask_value(1, _shell_type != ShellType.NONE)
+	set_collision_layer_value(1, _shell_type != Enums.ShellType.NONE)
+	set_collision_mask_value(1, _shell_type != Enums.ShellType.NONE)
 
 
 func respawn():
 	global_position = spawnpoint.global_position
-	change_shell(ShellType.NONE)
+	change_shell(Enums.ShellType.NONE)
