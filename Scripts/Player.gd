@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal slash
+
 var corpse_scene = preload("res://Scenes/Objects/Corpse.tscn")
 var spine_scene = preload("res://Scenes/Objects/Spine.tscn")
 
@@ -46,10 +48,10 @@ func _on_animated_sprite_2d_frame_changed():
 		var spine = spine_scene.instantiate()
 		Consts.root.add_child(spine)
 		spine.init(self, position, direction)
-	# TODO: handle swordfish action consequence
-
 
 func _on_animated_sprite_2d_animation_finished():
+	if $AnimatedSprite2D.animation == "swordfish_action":
+		emit_signal("slash")
 	if $AnimatedSprite2D.animation == "pufferfish_action" or $AnimatedSprite2D.animation == "swordfish_action":
 		action_in_progress = false
 		play_animation()

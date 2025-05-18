@@ -39,6 +39,8 @@ spines=""
 buttons=""
 doors=""
 level_boxes=""
+ropes=""
+player=""
 
 [input]
 

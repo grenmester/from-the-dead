@@ -184,7 +184,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bhhdu")
 }],
-"loop": true,
+"loop": false,
 "name": &"swordfish_action",
 "speed": 5.0
 }, {
@@ -225,7 +225,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dewec"]
 size = Vector2(28, 28)
 
-[node name="Player" type="CharacterBody2D" groups=["button_pushers"]]
+[node name="Player" type="CharacterBody2D" groups=["button_pushers", "player"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_kyqiw")

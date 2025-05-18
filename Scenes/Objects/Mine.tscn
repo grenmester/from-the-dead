@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1jrtf0lco2ct"]
+
+[ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="1_da1p1"]
+[ext_resource type="Script" uid="uid://clmk1ijfq388b" path="res://Scripts/Mine.gd" id="1_of1u5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_of1u5"]
+size = Vector2(26, 26)
+
+[node name="Mine" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_of1u5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_da1p1")
+region_enabled = true
+region_rect = Rect2(0, 208, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_of1u5")
