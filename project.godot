@@ -33,6 +33,7 @@ corpses=""
 spines=""
 buttons=""
 doors=""
+level_boxes=""
 
 [input]
 

@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd1i5ifryacls"]
+
+[ext_resource type="Script" uid="uid://cfwubpkniqqoh" path="res://Scripts/LevelMenu.gd" id="1_u100e"]
+[ext_resource type="PackedScene" uid="uid://btbt567v44r2d" path="res://Scenes/LevelBox.tscn" id="2_osod7"]
+
+[node name="LevelMenu" type="MarginContainer"]
+offset_right = 960.0
+offset_bottom = 536.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_u100e")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="LevelBox" parent="VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_osod7")]
+layout_mode = 2
+level_num = 1
+
+[node name="LevelBox2" parent="VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_osod7")]
+layout_mode = 2
+level_num = 2
+
+[node name="LevelBox3" parent="VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_osod7")]
+layout_mode = 2
+level_num = 3
+
+[node name="LevelBox4" parent="VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_osod7")]
+layout_mode = 2
+level_num = 4
+
+[node name="LevelBox5" parent="VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_osod7")]
+layout_mode = 2
+level_num = 5
+
+[node name="LevelBox6" parent="VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_osod7")]
+layout_mode = 2
+level_num = 6
+
+[node name="LevelBox7" parent="VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_osod7")]
+layout_mode = 2
+level_num = 7
+
+[node name="LevelBox8" parent="VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_osod7")]
+layout_mode = 2
+level_num = 8
+
+[connection signal="gui_input" from="VBoxContainer/HBoxContainer/GridContainer/LevelBox" to="." method="_on_level_box_gui_input"]

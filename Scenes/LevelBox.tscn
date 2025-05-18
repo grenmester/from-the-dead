@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://btbt567v44r2d"]
+
+[ext_resource type="Script" uid="uid://dwal0cxs1ykdd" path="res://Scripts/LevelBox.gd" id="1_aeled"]
+
+[node name="LevelBox" type="PanelContainer" groups=["level_boxes"]]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_aeled")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

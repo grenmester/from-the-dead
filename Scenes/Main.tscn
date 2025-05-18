@@ -98,6 +98,5 @@ flipped = true
 position = Vector2(2267, -79)
 flipped = true
 
-[connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="body_entered" from="Level5" to="." method="_on_room_body_entered"]
 [connection signal="body_exited" from="Level5" to="." method="_on_room_body_exited"]
