@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://b5x1a24ghd0ys"]
+[gd_scene load_steps=7 format=4 uid="uid://cfswksi76oeos"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_6mu4h"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="2_bw5bs"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="3_rxfvv"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="5_hv5wv"]
-[ext_resource type="PackedScene" uid="uid://dslbxqe47laos" path="res://Scenes/Objects/Finish.tscn" id="6_6mu4h"]
+[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Finish.tscn" id="6_6mu4h"]
 [ext_resource type="PackedScene" uid="uid://catflm4xdjh7e" path="res://Scenes/Objects/Corpse.tscn" id="6_45veu"]
 
 [node name="Level1" type="Node2D"]

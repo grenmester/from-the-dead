@@ -1,11 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc47c5ugrc17i"]
+[gd_scene load_steps=3 format=3 uid="uid://cc47c5ugrc17i"]
 
 [ext_resource type="PackedScene" uid="uid://bd1i5ifryacls" path="res://Scenes/LevelMenu.tscn" id="1_hpc76"]
+[ext_resource type="Script" uid="uid://b52e1i5i6k5vd" path="res://Scripts/MainScene.gd" id="1_tr2i4"]
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tr2i4")
+
+[node name="HUD" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ExitButton" type="Button" parent="HUD"]
+z_index = 1
+layout_mode = 0
+offset_left = 760.0
+offset_top = 8.0
+offset_right = 797.0
+offset_bottom = 39.0
+text = "Exit"
 
 [node name="LevelMenu" parent="." instance=ExtResource("1_hpc76")]
+layout_mode = 0
 offset_top = -536.0
 offset_bottom = 0.0
 
 [node name="Level" type="Node2D" parent="."]
+
+[connection signal="pressed" from="HUD/ExitButton" to="." method="_on_exit_button_pressed"]

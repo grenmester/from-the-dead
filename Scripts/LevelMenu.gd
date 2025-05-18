@@ -25,8 +25,3 @@ func load_level(level_num: int):
 		Consts.root = level_instance
 		level_instance.get_node('Camera2D').make_current()
 		level_instance.get_node('Finish').connect("win", unload_level)
-
-
-func _input(event):
-	if event.is_action_pressed("ui_home"):
-		unload_level()
