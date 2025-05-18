@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://btbt567v44r2d" path="res://Scenes/LevelBox.tscn" id="2_osod7"]
 
 [node name="LevelMenu" type="MarginContainer"]
-offset_right = 960.0
-offset_bottom = 536.0
+offset_right = 800.0
+offset_bottom = 450.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
