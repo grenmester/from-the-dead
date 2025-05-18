@@ -12,6 +12,12 @@ enum DoorColor {
 	YELLOW,
 }
 
+enum TrapdoorColor {
+	RED,
+	GREEN,
+	YELLOW,
+}
+
 enum ShellType {
 	NORMAL,
 	NONE,
