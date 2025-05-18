@@ -1,6 +1,12 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ggkv3qkr6w05"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://ggkv3qkr6w05"]
 
 [ext_resource type="Texture2D" uid="uid://ijpgp80w4xa2" path="res://Assets/tileset-test.png" id="1_4pova"]
+[ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="1_dmb8w"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h3bsk"]
+texture = ExtResource("1_dmb8w")
+2:13/0 = 0
+2:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50glp"]
 texture = ExtResource("1_4pova")
@@ -189,3 +195,4 @@ terrain_set_0/terrain_1/color = Color(1, 0.737255, 0.00784314, 1)
 terrain_set_0/terrain_2/name = "Terrain 2"
 terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
 sources/7 = SubResource("TileSetAtlasSource_50glp")
+sources/0 = SubResource("TileSetAtlasSource_h3bsk")
