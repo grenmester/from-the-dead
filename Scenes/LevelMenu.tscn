@@ -70,5 +70,3 @@ level_num = 7
 [node name="LevelBox8" parent="VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_osod7")]
 layout_mode = 2
 level_num = 8
-
-[connection signal="gui_input" from="VBoxContainer/HBoxContainer/GridContainer/LevelBox" to="." method="_on_level_box_gui_input"]

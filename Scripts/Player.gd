@@ -86,7 +86,7 @@ func _on_area_2d_body_entered(body: Node2D):
 		nearby_corpse = body
 
 
-func _on_area_2d_body_exited(body: Node2D):
+func _on_area_2d_body_exited(_body: Node2D):
 	nearby_corpse = null
 
 
@@ -150,10 +150,10 @@ func change_shell(_shell_type: ShellType):
 	update_corpse_collision(shell_type)
 
 
-func update_corpse_collision(shell_type: ShellType):
+func update_corpse_collision(_shell_type: ShellType):
 	# No collisions with corpses for naked crabs
-	set_collision_layer_value(1, shell_type != ShellType.NONE)
-	set_collision_mask_value(1, shell_type != ShellType.NONE)
+	set_collision_layer_value(1, _shell_type != ShellType.NONE)
+	set_collision_mask_value(1, _shell_type != ShellType.NONE)
 
 
 func respawn():
