@@ -1,20 +1,27 @@
 extends StaticBody2D
 
+enum DoorColor {
+	RED,
+	GREEN,
+	YELLOW,
+}
+
 @export var closed = true
-@export_enum("red", "green", "yellow") var color = "red"
+@export var color = DoorColor.RED
+
 var open_door
 var closed_door
 
 
 func _ready():
 	match color:
-		"red":
+		DoorColor.RED:
 			open_door = $OpenRedDoor
 			closed_door = $ClosedRedDoor
-		"green":
+		DoorColor.GREEN:
 			open_door = $OpenGreenDoor
 			closed_door = $ClosedGreenDoor
-		"yellow":
+		DoorColor.YELLOW:
 			open_door = $OpenYellowDoor
 			closed_door = $ClosedYellowDoor
 

@@ -19,5 +19,5 @@ func _ready() -> void:
 		#tween.tween_property($Camera2D, "position", body.get_position(), 2)
 		#tween.finished.connect($Player/Camera2D.make_current)
 
-func _on_player_hit():
-	$Player.position = level.get_node("Marker2D").position
+# func _on_player_hit():
+# 	$Player.position = level.get_node("Marker2D").position

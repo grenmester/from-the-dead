@@ -1,8 +1,17 @@
 extends CharacterBody2D
 
+enum ShellType {
+	NORMAL,
+	NONE,
+	PUFFERFISH,
+	SWORDFISH,
+}
+
 @export var flipped = false
+
 var spine_scene = preload("res://Scenes/Objects/Spine.tscn")
 var corpse_scene = preload("res://Scenes/Objects/Corpse.tscn")
+
 const initial_shoot_interval = 2
 const shoot_interval = 5
 
@@ -12,21 +21,6 @@ func _ready():
 	$AnimatedSprite2D.flip_h = flipped
 	$Timer.wait_time = initial_shoot_interval
 	$Timer.start()
-
-
-func _on_timer_timeout():
-	$AnimatedSprite2D.play("shoot")
-
-
-func _on_area_2d_area_entered(area: Area2D):
-	if area.is_in_group("spines") and (area.flipped or area.parent != self):
-		var corpse = corpse_scene.instantiate()
-		corpse.init("pufferfish")
-		get_tree().root.add_child(corpse)
-		corpse.position = self.global_position
-		corpse.sprite.flip_h = flipped
-		queue_free()
-		area.queue_free()
 
 
 func _on_animated_sprite_2d_frame_changed():
@@ -40,3 +34,18 @@ func _on_animated_sprite_2d_frame_changed():
 
 func _on_animated_sprite_2d_animation_finished():
 	$AnimatedSprite2D.play("idle")
+
+
+func _on_area_2d_area_entered(area: Area2D):
+	if area.is_in_group("spines") and (area.flipped or area.parent != self):
+		var corpse = corpse_scene.instantiate()
+		corpse.init(ShellType.PUFFERFISH)
+		get_tree().root.add_child(corpse)
+		corpse.position = self.global_position
+		corpse.sprite.flip_h = flipped
+		queue_free()
+		area.queue_free()
+
+
+func _on_timer_timeout():
+	$AnimatedSprite2D.play("shoot")

@@ -2,7 +2,14 @@ extends Area2D
 
 signal toggle(color)
 
-@export_enum("red", "green", "yellow") var color = "red"
+enum ButtonColor {
+	RED,
+	GREEN,
+	YELLOW,
+}
+
+@export var color = ButtonColor.RED
+
 var toggled = false
 var disabled_button
 var enabled_button
@@ -36,12 +43,12 @@ func _on_body_exited(body: Node2D):
 
 func configure():
 	match color:
-		"red":
+		ButtonColor.RED:
 			disabled_button = $DisabledRedButton
 			enabled_button = $EnabledRedButton
-		"green":
+		ButtonColor.GREEN:
 			disabled_button = $DisabledGreenButton
 			enabled_button = $EnabledGreenButton
-		"yellow":
+		ButtonColor.YELLOW:
 			disabled_button = $DisabledYellowButton
 			enabled_button = $EnabledYellowButton
