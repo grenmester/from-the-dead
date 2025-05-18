@@ -16,7 +16,6 @@ var spine_scene = preload("res://Scenes/Objects/Spine.tscn")
 
 var shell_type = ShellType.NORMAL
 var action_in_progress = false
-var is_hiding = false
 var direction = 1
 var nearby_corpse = null
 var spawnpoint: Marker2D
@@ -64,7 +63,7 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 func _on_area_2d_area_entered(area: Area2D):
-	if !area.is_in_group("spines") or is_hiding:
+	if !area.is_in_group("spines") or is_hiding():
 		return
 
 	if shell_type == ShellType.PUFFERFISH and !area.flipped and area.parent == self:
@@ -100,7 +99,7 @@ func update_direction():
 
 
 func handle_x_movement():
-	if shell_type == ShellType.NORMAL and action_in_progress:
+	if is_hiding():
 		velocity.x = 0
 	else:
 		var horizontal_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -124,9 +123,11 @@ func play_animation():
 
 
 func can_jump() -> bool:
-	is_hiding = shell_type == ShellType.NORMAL and action_in_progress
-	return is_on_floor() and !is_hiding
+	return is_on_floor() and !is_hiding()
 
+
+func is_hiding() -> bool:
+	return shell_type == ShellType.NORMAL and action_in_progress
 
 func handle_action():
 	match shell_type:
