@@ -36,4 +36,4 @@ position = Vector2(576, 72)
 closed = false
 
 [node name="Finish" parent="." instance=ExtResource("6_6mu4h")]
-position = Vector2(736, 304)
+position = Vector2(728, 304)

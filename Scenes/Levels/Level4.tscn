@@ -54,4 +54,4 @@ position = Vector2(552, 192)
 color = 2
 
 [node name="Finish" parent="." instance=ExtResource("6_rl5px")]
-position = Vector2(792, 208)
+position = Vector2(768, 208)
