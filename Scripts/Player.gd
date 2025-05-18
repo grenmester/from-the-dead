@@ -44,7 +44,7 @@ func _input(event):
 
 
 func _on_animated_sprite_2d_frame_changed():
-	if $AnimatedSprite2D.animation == "pufferfish_action" and $AnimatedSprite2D.frame == 2:
+	if $AnimatedSprite2D.animation == "pufferfish_action" and $AnimatedSprite2D.frame == 1:
 		var spine = spine_scene.instantiate()
 		Consts.root.add_child(spine)
 		spine.init(self, position, direction)

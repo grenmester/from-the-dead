@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bjq5dgve27xuw"]
+[gd_scene load_steps=25 format=3 uid="uid://bjq5dgve27xuw"]
 
 [ext_resource type="Script" uid="uid://c5qukyhtn6olp" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_gntrk"]
@@ -33,15 +33,11 @@ region = Rect2(144, 208, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
 atlas = ExtResource("2_gntrk")
-region = Rect2(80, 48, 32, 32)
+region = Rect2(176, 144, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ixxa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
 atlas = ExtResource("2_gntrk")
-region = Rect2(112, 48, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nn08x"]
-atlas = ExtResource("2_gntrk")
-region = Rect2(144, 48, 32, 32)
+region = Rect2(208, 144, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5v66d"]
 atlas = ExtResource("2_gntrk")
@@ -59,17 +55,9 @@ region = Rect2(80, 144, 32, 32)
 atlas = ExtResource("2_gntrk")
 region = Rect2(144, 144, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ixxa"]
 atlas = ExtResource("2_gntrk")
-region = Rect2(48, 80, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_52ee3"]
-atlas = ExtResource("2_gntrk")
-region = Rect2(48, 112, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bhhdu"]
-atlas = ExtResource("2_gntrk")
-region = Rect2(48, 144, 32, 32)
+region = Rect2(176, 176, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70hv0"]
 atlas = ExtResource("2_gntrk")
@@ -143,10 +131,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_gntrk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5ixxa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nn08x")
+"texture": SubResource("AtlasTexture_dewec")
 }],
 "loop": false,
 "name": &"pufferfish_action",
@@ -176,13 +161,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dewec")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_52ee3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bhhdu")
+"texture": SubResource("AtlasTexture_5ixxa")
 }],
 "loop": false,
 "name": &"swordfish_action",
@@ -232,7 +211,7 @@ script = ExtResource("1_kyqiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bhhdu")
-animation = &"swordfish_action"
+animation = &"pufferfish_action"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dewec")
