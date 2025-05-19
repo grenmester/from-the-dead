@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="From the Dead"
-run/main_scene="uid://cmq5ndt6q7y5h"
+run/main_scene="uid://cc47c5ugrc17i"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
