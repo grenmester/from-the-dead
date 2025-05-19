@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc5807wn2any5"]
+[gd_scene load_steps=5 format=3 uid="uid://cc5807wn2any5"]
 
 [ext_resource type="Script" uid="uid://cv2knwu2rvese" path="res://Scripts/Trapdoor.gd" id="1_anmpf"]
 [ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="1_xtuv1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anmpf"]
 size = Vector2(47, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndip3"]
+size = Vector2(46, 5)
 
 [node name="Trapdoor" type="StaticBody2D"]
 collision_layer = 11
@@ -56,3 +59,14 @@ region_rect = Rect2(32, 176, 47, 6)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_anmpf")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_ndip3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

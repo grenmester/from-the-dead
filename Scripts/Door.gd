@@ -5,6 +5,7 @@ extends StaticBody2D
 
 var open_door
 var closed_door
+var body_count = 0
 
 
 func _ready():
@@ -29,7 +30,8 @@ func _ready():
 func toggle(button_color):
 	if button_color == color:
 		closed = !closed
-		configure()
+		if body_count == 0:
+			configure()
 
 
 func configure():
@@ -41,3 +43,15 @@ func configure():
 	else:
 		open_door.show()
 		closed_door.hide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("door_blockers"):
+		body_count += 1
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("door_blockers"):
+		body_count -= 1
+		if body_count == 0:
+			configure()

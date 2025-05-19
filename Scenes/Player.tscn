@@ -207,7 +207,7 @@ size = Vector2(28, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(26, 22)
 
-[node name="Player" type="CharacterBody2D" groups=["button_pushers", "player"]]
+[node name="Player" type="CharacterBody2D" groups=["button_pushers", "door_blockers", "player"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_kyqiw")

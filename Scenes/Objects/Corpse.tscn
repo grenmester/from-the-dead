@@ -12,7 +12,7 @@ size = Vector2(25, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xoet0"]
 size = Vector2(31, 14)
 
-[node name="Corpse" type="CharacterBody2D" groups=["button_pushers", "corpses"]]
+[node name="Corpse" type="CharacterBody2D" groups=["button_pushers", "corpses", "door_blockers"]]
 script = ExtResource("1_omnu5")
 
 [node name="Shell" type="Sprite2D" parent="."]

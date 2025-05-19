@@ -42,6 +42,7 @@ level_boxes=""
 ropes=""
 player=""
 fish=""
+door_blockers=""
 
 [input]
 
