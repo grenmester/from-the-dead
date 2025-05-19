@@ -37,5 +37,4 @@ func can_reflect(body: Node2D):
 
 
 func can_destroy(body: Node2D):
-	# TODO: add collision for terrain
-	return body.is_in_group("doors")
+	return body.is_in_group("doors") or body is TileMapLayer
