@@ -30,7 +30,7 @@ func _ready():
 func toggle(button_color):
 	if button_color == color:
 		closed = !closed
-		if body_count == 0:
+		if body_count == 0 or !closed:
 			configure()
 
 
