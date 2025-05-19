@@ -134,9 +134,7 @@ func handle_action():
 			action_in_progress = !action_in_progress
 		Enums.ShellType.NONE:
 			if nearby_corpse:
-				var new_position = nearby_corpse.global_position
 				nearby_corpse.queue_free()
-				global_position = new_position
 				change_shell(nearby_corpse.type)
 		Enums.ShellType.PUFFERFISH:
 			action_in_progress = true
