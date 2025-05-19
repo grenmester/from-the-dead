@@ -5,9 +5,9 @@ signal slash
 var corpse_scene = preload("res://Scenes/Objects/Corpse.tscn")
 var spine_scene = preload("res://Scenes/Objects/Spine.tscn")
 
-@export var speed = 150
-@export var gravity = 150
-@export var jump_force = -150
+@export var speed = 120
+@export var gravity = 500
+@export var jump_force = -275
 
 var shell_type = Enums.ShellType.NORMAL
 var action_in_progress = false
