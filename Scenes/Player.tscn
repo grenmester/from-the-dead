@@ -205,10 +205,10 @@ animations = [{
 size = Vector2(28, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
-size = Vector2(26, 22)
+size = Vector2(26, 1)
 
 [node name="Player" type="CharacterBody2D" groups=["button_pushers", "door_blockers", "player"]]
-collision_layer = 3
+collision_layer = 7
 collision_mask = 3
 script = ExtResource("1_kyqiw")
 
@@ -228,10 +228,10 @@ shape = SubResource("RectangleShape2D_dewec")
 
 [node name="Box Collision Underfoot" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box Collision Underfoot"]
-position = Vector2(0, 11)
+position = Vector2(0, 14.5)
 shape = SubResource("RectangleShape2D_kyqiw")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
