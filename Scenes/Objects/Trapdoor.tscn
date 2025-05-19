@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://spth7vbom5rt"]
+[gd_scene load_steps=4 format=3 uid="uid://cc5807wn2any5"]
 
 [ext_resource type="Script" uid="uid://cv2knwu2rvese" path="res://Scripts/Trapdoor.gd" id="1_anmpf"]
 [ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="1_xtuv1"]
@@ -11,39 +11,46 @@ script = ExtResource("1_anmpf")
 
 [node name="ClosedRedTrapdoor" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(0, 3)
 texture = ExtResource("1_xtuv1")
 region_enabled = true
 region_rect = Rect2(32, 64, 47, 6)
 
 [node name="ClosedGreenTrapdoor" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(0, 3)
 texture = ExtResource("1_xtuv1")
 region_enabled = true
 region_rect = Rect2(32, 112, 47, 6)
 
 [node name="ClosedYellowTrapdoor" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(0, 3)
 texture = ExtResource("1_xtuv1")
 region_enabled = true
 region_rect = Rect2(32, 160, 47, 6)
 
 [node name="OpenRedTrapdoor" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(0, 3)
 texture = ExtResource("1_xtuv1")
 region_enabled = true
 region_rect = Rect2(32, 80, 47, 6)
 
 [node name="OpenGreenTrapdoor" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(0, 3)
 texture = ExtResource("1_xtuv1")
 region_enabled = true
 region_rect = Rect2(32, 128, 47, 6)
 
 [node name="OpenYellowTrapdoor" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(0, 3)
 texture = ExtResource("1_xtuv1")
 region_enabled = true
 region_rect = Rect2(32, 176, 47, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_anmpf")
