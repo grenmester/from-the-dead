@@ -64,6 +64,10 @@ func _on_area_2d_area_entered(area: Area2D):
 	if shell_type == Enums.ShellType.PUFFERFISH and !area.flipped and area.parent == self:
 		return
 
+	die()
+	area.queue_free()
+
+func die():
 	if shell_type != Enums.ShellType.NONE:
 		var corpse = corpse_scene.instantiate()
 		corpse.init(shell_type)
@@ -71,7 +75,6 @@ func _on_area_2d_area_entered(area: Area2D):
 		corpse.position = global_position
 		corpse.sprite.flip_h = direction == -1
 
-	area.queue_free()
 	respawn()
 
 

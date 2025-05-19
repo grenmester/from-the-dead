@@ -61,7 +61,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfj3c"]
 size = Vector2(26, 26)
 
-[node name="Pufferfish" type="CharacterBody2D" groups=["button_pushers"]]
+[node name="Pufferfish" type="CharacterBody2D" groups=["button_pushers", "fish"]]
 script = ExtResource("1_h0an2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -31,13 +31,16 @@ func _on_animated_sprite_2d_animation_finished():
 
 func _on_area_2d_area_entered(area: Area2D):
 	if area.is_in_group("spines") and (area.flipped or area.parent != self):
+		die()
+		area.queue_free()
+
+func die():
 		var corpse = corpse_scene.instantiate()
 		corpse.init(Enums.ShellType.PUFFERFISH)
 		Consts.root.add_child(corpse)
 		corpse.position = self.global_position
 		corpse.sprite.flip_h = flipped
 		queue_free()
-		area.queue_free()
 
 
 func _on_timer_timeout():

@@ -41,6 +41,7 @@ doors=""
 level_boxes=""
 ropes=""
 player=""
+fish=""
 
 [input]
 

@@ -18,3 +18,19 @@ func _physics_process(delta: float) -> void:
 
 func drop() -> void:
 	has_gravity = true
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is TileMapLayer:
+		queue_free()
+	elif body.is_in_group("player"):
+		if !body.is_hiding():
+			body.die()
+		queue_free()
+	elif body.is_in_group("fish"):
+		body.die()
+		queue_free()
+	elif body.is_in_group("corpses"):
+		queue_free()
+	elif body.is_in_group("crate_platform"):
+		body.queue_free()
+		queue_free()
