@@ -12,14 +12,17 @@ func _ready() -> void:
 			rope.connect("snap", queue_free)
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		is_on_player = true
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		is_on_player = false
 
 func slash() -> void:
 	if is_on_player:
-		emit_signal("snap")
-		queue_free()
+		emit_snap()
+
+func emit_snap() -> void:
+	emit_signal("snap")
+	queue_free()

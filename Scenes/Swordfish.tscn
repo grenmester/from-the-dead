@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://clntwxk4k47vb"]
+
+[ext_resource type="Script" uid="uid://bi1fyag4fglf2" path="res://Scripts/Swordfish.gd" id="1_3aahq"]
+[ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="1_6y4q4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3aahq"]
+size = Vector2(78, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwaqo"]
+size = Vector2(22, 4)
+
+[node name="Swordfish" type="CharacterBody2D" groups=["button_pushers", "fish"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_3aahq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6y4q4")
+region_enabled = true
+region_rect = Rect2(0, 32, 80, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3aahq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3aahq")
+
+[node name="Tip" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
+position = Vector2(-29, 3)
+shape = SubResource("RectangleShape2D_rwaqo")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Tip" to="." method="_on_tip_area_entered"]
+[connection signal="body_entered" from="Tip" to="." method="_on_tip_body_entered"]
