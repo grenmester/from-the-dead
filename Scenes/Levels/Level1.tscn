@@ -29,6 +29,7 @@ position = Vector2(152, 128)
 
 [node name="Player" parent="." instance=ExtResource("5_hv5wv")]
 position = Vector2(152, 128)
+shell_type = 1
 
 [node name="Button" parent="." instance=ExtResource("2_bw5bs")]
 position = Vector2(432, 136)

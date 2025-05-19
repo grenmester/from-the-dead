@@ -8,8 +8,8 @@ var spine_scene = preload("res://Scenes/Objects/Spine.tscn")
 @export var speed = 120
 @export var gravity = 500
 @export var jump_force = -275
+@export var shell_type = Enums.ShellType.NORMAL
 
-var shell_type = Enums.ShellType.NORMAL
 var action_in_progress = false
 var direction = 1
 var nearby_corpse = null
@@ -18,6 +18,7 @@ var spawnpoint: Marker2D
 
 func _ready():
 	spawnpoint = get_parent().get_node("Spawnpoint")
+	update_corpse_collision(shell_type)
 
 
 func _physics_process(delta: float):
@@ -133,14 +134,14 @@ func handle_action():
 			action_in_progress = !action_in_progress
 		Enums.ShellType.NONE:
 			if nearby_corpse:
-				change_shell(nearby_corpse.type)
+				var new_position = nearby_corpse.global_position
 				nearby_corpse.queue_free()
+				global_position = new_position
+				change_shell(nearby_corpse.type)
 		Enums.ShellType.PUFFERFISH:
-			if !action_in_progress:
-				action_in_progress = true
+			action_in_progress = true
 		Enums.ShellType.SWORDFISH:
-			if !action_in_progress:
-				action_in_progress = true
+			action_in_progress = true
 
 
 func change_shell(_shell_type: Enums.ShellType):
