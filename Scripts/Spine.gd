@@ -38,3 +38,8 @@ func can_reflect(body: Node2D):
 
 func can_destroy(body: Node2D):
 	return body.is_in_group("doors") or body is TileMapLayer
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("spines"):
+		queue_free()
