@@ -51,11 +51,3 @@ color = 1
 
 [node name="Pufferfish" parent="." instance=ExtResource("6_bvsh1")]
 position = Vector2(616, 376)
-
-[node name="Door5" parent="." instance=ExtResource("5_hy6wf")]
-position = Vector2(384, 72)
-color = 2
-
-[node name="Button3" parent="." instance=ExtResource("4_1us0t")]
-position = Vector2(400, 88)
-color = 2
