@@ -1,33 +1,34 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh3mvfxlhqiid"]
 
 [ext_resource type="Script" uid="uid://378ak2gipdhi" path="res://Scripts/Crate.gd" id="1_i7iub"]
-[ext_resource type="Texture2D" uid="uid://d330hf3jm3g60" path="res://Assets/TempCrate.png" id="2_i7iub"]
+[ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_i7iub"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i7iub"]
-radius = 15.0
+radius = 16.0
+height = 32.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_365xj"]
-size = Vector2(32, 24)
+size = Vector2(34, 14)
 
-[node name="Crate" type="RigidBody2D" groups=["button_pushers"]]
+[node name="Crate" type="RigidBody2D" groups=["button_pushers", "crate_platform"]]
 collision_layer = 4
 collision_mask = 5
 can_sleep = false
 lock_rotation = true
 script = ExtResource("1_i7iub")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_i7iub")
+region_enabled = true
+region_rect = Rect2(192, 32, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_i7iub")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Wall"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -1)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_365xj")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

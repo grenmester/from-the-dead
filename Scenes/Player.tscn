@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bjq5dgve27xuw"]
+[gd_scene load_steps=26 format=3 uid="uid://bjq5dgve27xuw"]
 
 [ext_resource type="Script" uid="uid://c5qukyhtn6olp" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_gntrk"]
@@ -204,6 +204,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dewec"]
 size = Vector2(28, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
+size = Vector2(26, 22)
+
 [node name="Player" type="CharacterBody2D" groups=["button_pushers", "player"]]
 collision_layer = 3
 collision_mask = 3
@@ -223,8 +226,18 @@ shape = SubResource("RectangleShape2D_dewec")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
+[node name="Box Collision Underfoot" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box Collision Underfoot"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_kyqiw")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Box Collision Underfoot" to="." method="_on_box_collision_underfoot_body_entered"]
+[connection signal="body_exited" from="Box Collision Underfoot" to="." method="_on_box_collision_underfoot_body_exited"]

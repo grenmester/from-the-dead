@@ -155,3 +155,13 @@ func update_corpse_collision(_shell_type: Enums.ShellType):
 func respawn():
 	global_position = spawnpoint.global_position
 	change_shell(Enums.ShellType.NONE)
+
+
+func _on_box_collision_underfoot_body_entered(body: Node2D) -> void:
+	if body.is_in_group("crate_platform"):
+		body.set_collision_layer_value(2, true)
+
+
+func _on_box_collision_underfoot_body_exited(body: Node2D) -> void:
+	if body.is_in_group("crate_platform"):
+		body.set_collision_layer_value(2, false)
