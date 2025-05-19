@@ -34,6 +34,7 @@ func _on_area_2d_area_entered(area: Area2D):
 		die()
 		area.queue_free()
 
+
 func die():
 		var corpse = corpse_scene.instantiate()
 		corpse.init(Enums.ShellType.PUFFERFISH)
