@@ -15,7 +15,7 @@ func _ready():
 		Enums.TrapdoorColor.GREEN:
 			open_trapdoor = $OpenGreenTrapdoor
 			closed_trapdoor = $ClosedGreenTrapdoor
-		Enums.DoorColor.YELLOW:
+		Enums.TrapdoorColor.YELLOW:
 			open_trapdoor = $OpenYellowTrapdoor
 			closed_trapdoor = $ClosedYellowTrapdoor
 
