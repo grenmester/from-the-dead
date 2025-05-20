@@ -1,17 +1,17 @@
-[gd_scene load_steps=14 format=4 uid="uid://dm45ibaf8jkhq"]
+[gd_scene load_steps=14 format=4 uid="uid://c6venecspqk7x"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_dep18"]
-[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Levels/Background.tscn" id="1_pomu1"]
+[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Background.tscn" id="1_pomu1"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="2_jqpi3"]
 [ext_resource type="PackedScene" uid="uid://dh3mvfxlhqiid" path="res://Scenes/Objects/Crate.tscn" id="3_jqpi3"]
 [ext_resource type="PackedScene" uid="uid://cc5807wn2any5" path="res://Scenes/Objects/Trapdoor.tscn" id="4_grs4q"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="5_8mbuo"]
 [ext_resource type="PackedScene" uid="uid://c1jrtf0lco2ct" path="res://Scenes/Objects/Mine.tscn" id="5_tcs12"]
-[ext_resource type="PackedScene" uid="uid://bxcou5j22og1i" path="res://Scenes/Objects/Rope.tscn" id="6_rxtma"]
+[ext_resource type="PackedScene" uid="uid://cd0xc3760xpj3" path="res://Scenes/Objects/Rope.tscn" id="6_rxtma"]
 [ext_resource type="PackedScene" uid="uid://p2b4ew35erm5" path="res://Scenes/Objects/Finish.tscn" id="8_bgnfb"]
 [ext_resource type="PackedScene" uid="uid://clntwxk4k47vb" path="res://Scenes/Swordfish.tscn" id="9_pomu1"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="10_v0f15"]
-[ext_resource type="PackedScene" uid="uid://d0qqtqpx63gij" path="res://Scenes/Objects/Start.tscn" id="11_rxtma"]
+[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Start.tscn" id="11_rxtma"]
 [ext_resource type="PackedScene" uid="uid://ylygkknlk1hx" path="res://Scenes/Pufferfish.tscn" id="12_bgnfb"]
 
 [node name="Level7" type="Node2D" groups=["TileSet"]]
@@ -31,6 +31,9 @@ anchor_mode = 0
 zoom = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("2_jqpi3")]
+position = Vector2(80, 384)
+
+[node name="Start" parent="." instance=ExtResource("11_rxtma")]
 position = Vector2(80, 384)
 
 [node name="Trapdoor" parent="." instance=ExtResource("4_grs4q")]
@@ -100,9 +103,6 @@ id = 1
 [node name="Rope10" parent="." instance=ExtResource("6_rxtma")]
 position = Vector2(600, 88)
 id = 1
-
-[node name="Start" parent="." instance=ExtResource("11_rxtma")]
-position = Vector2(80, 384)
 
 [node name="Rope12" parent="." instance=ExtResource("6_rxtma")]
 position = Vector2(600, 56)

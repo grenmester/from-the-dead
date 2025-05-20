@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=4 uid="uid://m1wn6olpw7qc"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_annsx"]
-[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Levels/Background.tscn" id="1_ca5bt"]
+[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Background.tscn" id="1_ca5bt"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="2_qbvga"]
 [ext_resource type="PackedScene" uid="uid://ylygkknlk1hx" path="res://Scenes/Pufferfish.tscn" id="3_qbvga"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="4_gpvrs"]
 [ext_resource type="PackedScene" uid="uid://dh3mvfxlhqiid" path="res://Scenes/Objects/Crate.tscn" id="4_xp8yv"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="5_rl5px"]
-[ext_resource type="PackedScene" uid="uid://d0qqtqpx63gij" path="res://Scenes/Objects/Start.tscn" id="6_rl5px"]
+[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Start.tscn" id="6_rl5px"]
 [ext_resource type="PackedScene" uid="uid://p2b4ew35erm5" path="res://Scenes/Objects/Finish.tscn" id="7_inj8u"]
 [ext_resource type="PackedScene" uid="uid://clntwxk4k47vb" path="res://Scenes/Swordfish.tscn" id="8_bfawm"]
 

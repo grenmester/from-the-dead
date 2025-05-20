@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://q3pvnwffn5ei"]
+[gd_scene load_steps=13 format=4 uid="uid://dfusuevm2ohtx"]
 
-[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Levels/Background.tscn" id="1_3i7ro"]
+[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Background.tscn" id="1_3i7ro"]
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_ve7n4"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="2_d4xud"]
 [ext_resource type="PackedScene" uid="uid://p2b4ew35erm5" path="res://Scenes/Objects/Finish.tscn" id="3_q5el5"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c1jrtf0lco2ct" path="res://Scenes/Objects/Mine.tscn" id="7_6ggnd"]
 [ext_resource type="PackedScene" uid="uid://cc5807wn2any5" path="res://Scenes/Objects/Trapdoor.tscn" id="8_q5el5"]
 [ext_resource type="PackedScene" uid="uid://dh3mvfxlhqiid" path="res://Scenes/Objects/Crate.tscn" id="9_t0ble"]
-[ext_resource type="PackedScene" uid="uid://bxcou5j22og1i" path="res://Scenes/Objects/Rope.tscn" id="10_t0ble"]
-[ext_resource type="PackedScene" uid="uid://d0qqtqpx63gij" path="res://Scenes/Objects/Start.tscn" id="11_nvbyj"]
+[ext_resource type="PackedScene" uid="uid://cd0xc3760xpj3" path="res://Scenes/Objects/Rope.tscn" id="10_t0ble"]
+[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Start.tscn" id="11_nvbyj"]
 
 [node name="Level3" type="Node2D"]
 
@@ -30,6 +30,9 @@ anchor_mode = 0
 zoom = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("2_d4xud")]
+position = Vector2(96, 400)
+
+[node name="Start" parent="." instance=ExtResource("11_nvbyj")]
 position = Vector2(96, 400)
 
 [node name="Finish" parent="." instance=ExtResource("3_q5el5")]
@@ -178,6 +181,3 @@ position = Vector2(152, 168)
 [node name="Mine6" parent="." instance=ExtResource("7_6ggnd")]
 position = Vector2(152, 192)
 rope_id = 0
-
-[node name="Start" parent="." instance=ExtResource("11_nvbyj")]
-position = Vector2(96, 400)
