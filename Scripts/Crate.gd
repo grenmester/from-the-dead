@@ -10,6 +10,7 @@ func _ready() -> void:
 				rope.connect("snap", drop)
 				freeze = true
 				set_collision_layer_value(1, true)
+				
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,11 +19,14 @@ func _process(delta: float) -> void:
 
 
 func drop() -> void:
-	freeze = false
+	set_deferred("freeze", false)
 	set_collision_layer_value(1, false)
-
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer:
 		set_collision_layer_value(1, true)
+		set_collision_layer_value(2, true)
+	if body.is_in_group("doors"):
+		set_collision_layer_value(1, true)
+		set_collision_layer_value(2, true)
