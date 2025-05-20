@@ -19,10 +19,13 @@ func _ready():
 func _on_animated_sprite_2d_frame_changed():
 	if $AnimatedSprite2D.animation == "shoot" and $AnimatedSprite2D.frame == 2:
 		var spine = spine_scene.instantiate()
-		Consts.root.add_child(spine)
+		
+		var root = Consts.root if Consts.root else get_tree().root
+		root.add_child(spine)
+		
 		var direction = 1 if flipped else -1
 		var offset = Vector2(16 * direction, 0)
-		spine.init(self, position + offset, direction)
+		spine.init(self, global_position + offset, direction)
 		$Timer.wait_time = shoot_interval
 		$Timer.start()
 
