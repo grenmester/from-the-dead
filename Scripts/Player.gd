@@ -48,7 +48,8 @@ func _on_animated_sprite_2d_frame_changed():
 	if $AnimatedSprite2D.animation == "pufferfish_action" and $AnimatedSprite2D.frame == 1:
 		var spine = spine_scene.instantiate()
 		Consts.root.add_child(spine)
-		spine.init(self, position, direction)
+		var offset = Vector2(16 * direction, 0)
+		spine.init(self, position + offset, direction)
 
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "swordfish_action":

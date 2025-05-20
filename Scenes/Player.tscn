@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bjq5dgve27xuw"]
+[gd_scene load_steps=27 format=3 uid="uid://bjq5dgve27xuw"]
 
 [ext_resource type="Script" uid="uid://c5qukyhtn6olp" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_gntrk"]
@@ -59,6 +59,10 @@ region = Rect2(144, 144, 32, 32)
 atlas = ExtResource("2_gntrk")
 region = Rect2(176, 176, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn08x"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(208, 176, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_70hv0"]
 atlas = ExtResource("2_gntrk")
 region = Rect2(80, 176, 32, 32)
@@ -91,7 +95,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"action",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -102,7 +106,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -113,7 +117,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"naked_idle",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -124,7 +128,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"naked_walk",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -135,7 +139,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"pufferfish_action",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -146,7 +150,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"pufferfish_idle",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -157,15 +161,18 @@ animations = [{
 }],
 "loop": true,
 "name": &"pufferfish_walk",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5ixxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn08x")
 }],
 "loop": false,
 "name": &"swordfish_action",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -176,7 +183,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"swordfish_idle",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -187,7 +194,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"swordfish_walk",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -198,7 +205,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dewec"]
