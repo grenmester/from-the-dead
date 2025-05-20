@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://q3pvnwffn5ei"]
+[gd_scene load_steps=12 format=4 uid="uid://q3pvnwffn5ei"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_ve7n4"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="2_d4xud"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/Finish.tscn" id="3_q5el5"]
+[ext_resource type="PackedScene" uid="uid://p2b4ew35erm5" path="res://Scenes/Objects/Finish.tscn" id="3_q5el5"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="4_t0ble"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="5_nvbyj"]
 [ext_resource type="PackedScene" uid="uid://ylygkknlk1hx" path="res://Scenes/Pufferfish.tscn" id="6_3i7ro"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cc5807wn2any5" path="res://Scenes/Objects/Trapdoor.tscn" id="8_q5el5"]
 [ext_resource type="PackedScene" uid="uid://dh3mvfxlhqiid" path="res://Scenes/Objects/Crate.tscn" id="9_t0ble"]
 [ext_resource type="PackedScene" uid="uid://bxcou5j22og1i" path="res://Scenes/Objects/Rope.tscn" id="10_t0ble"]
+[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Start.tscn" id="11_nvbyj"]
 
 [node name="Level3" type="Node2D"]
 
@@ -22,20 +23,17 @@ anchor_mode = 0
 zoom = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("2_d4xud")]
-position = Vector2(66, 386)
-
-[node name="Spawnpoint" type="Marker2D" parent="."]
-position = Vector2(66, 386)
+position = Vector2(80, 384)
 
 [node name="Finish" parent="." instance=ExtResource("3_q5el5")]
-position = Vector2(80, 80)
+position = Vector2(80, 96)
 
 [node name="Button" parent="." instance=ExtResource("4_t0ble")]
 position = Vector2(464, 328)
 color = 1
 
 [node name="Button2" parent="." instance=ExtResource("4_t0ble")]
-position = Vector2(120, 392)
+position = Vector2(136, 392)
 
 [node name="Door2" parent="." instance=ExtResource("5_nvbyj")]
 position = Vector2(184, 376)
@@ -197,3 +195,6 @@ position = Vector2(136, 152)
 [node name="Mine6" parent="." instance=ExtResource("7_6ggnd")]
 position = Vector2(136, 168)
 rope_id = 0
+
+[node name="Start" parent="." instance=ExtResource("11_nvbyj")]
+position = Vector2(80, 384)
