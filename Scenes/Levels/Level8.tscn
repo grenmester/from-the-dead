@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://dp11tluejj4x"]
+[gd_scene load_steps=13 format=4 uid="uid://dp11tluejj4x"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Levels/Background.tscn" id="1_2kaov"]
+[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Background.tscn" id="1_2kaov"]
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_cuqfl"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="2_irt0h"]
 [ext_resource type="PackedScene" uid="uid://p2b4ew35erm5" path="res://Scenes/Objects/Finish.tscn" id="3_v6v34"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="4_qggba"]
+[ext_resource type="PackedScene" uid="uid://d0qqtqpx63gij" path="res://Scenes/Objects/Start.tscn" id="4_s3opc"]
 [ext_resource type="PackedScene" uid="uid://cc5807wn2any5" path="res://Scenes/Objects/Trapdoor.tscn" id="5_lnqqv"]
 [ext_resource type="PackedScene" uid="uid://dh3mvfxlhqiid" path="res://Scenes/Objects/Crate.tscn" id="6_a3hxy"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="7_6ti5a"]
@@ -31,9 +32,8 @@ zoom = Vector2(2, 2)
 [node name="Player" parent="." instance=ExtResource("2_irt0h")]
 position = Vector2(552, 112)
 
-[node name="Start" parent="." instance=ExtResource("3_v6v34")]
+[node name="Start" parent="." instance=ExtResource("4_s3opc")]
 position = Vector2(552, 112)
-script = null
 
 [node name="Finish" parent="." instance=ExtResource("3_v6v34")]
 position = Vector2(80, 384)
