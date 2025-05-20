@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-signal slash
-
 @export var speed = 150
 @export var flipped = false
 @onready var sprite = $Sprite2D
@@ -42,4 +40,4 @@ func _on_tip_body_entered(body: Node2D) -> void:
 
 func _on_tip_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ropes"):
-		emit_signal("slash")
+		area.emit_snap()
