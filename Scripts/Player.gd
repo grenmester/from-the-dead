@@ -34,14 +34,6 @@ func _input(event):
 		velocity.y = jump_force
 	if event.is_action_pressed("ui_select"):
 		handle_action()
-	if Input.is_key_pressed(KEY_U):
-		change_shell(Enums.ShellType.NORMAL)
-	if Input.is_key_pressed(KEY_I):
-		change_shell(Enums.ShellType.NONE)
-	if Input.is_key_pressed(KEY_O):
-		change_shell(Enums.ShellType.PUFFERFISH)
-	if Input.is_key_pressed(KEY_P):
-		change_shell(Enums.ShellType.SWORDFISH)
 
 
 func _on_animated_sprite_2d_frame_changed():
