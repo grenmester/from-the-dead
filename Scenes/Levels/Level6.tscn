@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://dqikmvxyjg1xc"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_lvllu"]
-[ext_resource type="PackedScene" path="res://Scenes/Levels/Background.tscn" id="1_vxd2s"]
+[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Background.tscn" id="1_vxd2s"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="2_iqc0i"]
 [ext_resource type="PackedScene" uid="uid://cc5807wn2any5" path="res://Scenes/Objects/Trapdoor.tscn" id="3_a8aqt"]
 [ext_resource type="PackedScene" uid="uid://d0qqtqpx63gij" path="res://Scenes/Objects/Start.tscn" id="3_bkrib"]

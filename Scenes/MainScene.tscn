@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bd1i5ifryacls" path="res://Scenes/LevelMenu.tscn" id="1_hpc76"]
 [ext_resource type="Script" uid="uid://b52e1i5i6k5vd" path="res://Scripts/MainScene.gd" id="1_tr2i4"]
-[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Levels/Background.tscn" id="2_4b75m"]
+[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Background.tscn" id="2_4b75m"]
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="2_nhkr4"]
 [ext_resource type="PackedScene" uid="uid://clntwxk4k47vb" path="res://Scenes/Swordfish.tscn" id="3_qxria"]
 [ext_resource type="PackedScene" uid="uid://ylygkknlk1hx" path="res://Scenes/Pufferfish.tscn" id="4_y4jh7"]
