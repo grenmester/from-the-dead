@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=4 uid="uid://cfswksi76oeos"]
+[gd_scene load_steps=11 format=4 uid="uid://bh0jpxgatxxap"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_6mu4h"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="2_bw5bs"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="3_rxfvv"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="5_hv5wv"]
-[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Finish.tscn" id="6_6mu4h"]
+[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Start.tscn" id="6_6mu4h"]
 [ext_resource type="PackedScene" uid="uid://catflm4xdjh7e" path="res://Scenes/Objects/Corpse.tscn" id="6_45veu"]
 [ext_resource type="PackedScene" uid="uid://dh3mvfxlhqiid" path="res://Scenes/Objects/Crate.tscn" id="7_3ipdw"]
 [ext_resource type="PackedScene" uid="uid://cc5807wn2any5" path="res://Scenes/Objects/Trapdoor.tscn" id="7_jcebb"]
 [ext_resource type="PackedScene" uid="uid://c1jrtf0lco2ct" path="res://Scenes/Objects/Mine.tscn" id="8_f3nwb"]
+[ext_resource type="PackedScene" uid="uid://p2b4ew35erm5" path="res://Scenes/Objects/Finish.tscn" id="10_f3nwb"]
 
 [node name="Level1" type="Node2D"]
 
@@ -23,10 +24,10 @@ tile_set = ExtResource("1_6mu4h")
 
 [node name="Decor" type="TileMapLayer" parent="."]
 position = Vector2(136, 48)
-tile_map_data = PackedByteArray("AAAIAAUAAAAFAAQAAAD8/xYAAAAFAAQAAAD6/xYAAAAFAAQAABD//xYAAAAJAAQAAAABABYAAAAFAAMAAAD7/w4AAAAJAAUAAAAKABQAAAAFAAMAAAAVABYAAAAFAAMAAAAbAAgAAAAFAAMAAAAgAAgAAAAJAAUAAAAmABYAAAAJAAUAAAAiABYAAAAKAAIAAAACAAUAAAALAAQAAAAjABYAAAAFAAQAAAASABIAAAAFAAQAAAAYAAwAAAAFAAQAABAWABIAAAAFAAMAABAaAAMAAAAFAAMAABAMAAUAAAAFAAMAABALAA4AAAAFAAMAABAZABYAAAAJAAUAAAAOAAoAAAAIAAAAAAAOAAUAAAAIAAAAAAD7/wwAAAAIAAAAAAD8/xMAAAAIAAAAAAAYABQAAAAIAAAAAAAlABIAAAAIAAAAAAAmAAoAAAAIAAAAAAAlAAEAAAAIAAAAAAATAAEAAAAIAAEAAAAFAAEAAAAIAAEAAAAGAA8AAAAIAAEAAAAbABAAAAAIAAEAAAAcABAAAAAKAAEAAAAcABEAAAAKAAAAAAAmABEAAAAKAAAAAAAPABAAAAAKAAAAAAAQABAAAAAKAAAAAAD6/xIAAAAKAAAAAAD8/woAAAAKAAAAAAD7/woAAAAKAAEAAAAFAAIAAAAKAAEAAAASAAEAAAAKAAEAAAASAAIAAAAIAAEAAAAmAAIAAAAIAAEAAAAUAAkAAAAIAAEAAAD8/xIAAAAIAAEAAAA=")
+tile_map_data = PackedByteArray("AAAIAAUAAAAFAAQAAAD8/xYAAAAFAAQAAAD6/xYAAAAFAAQAABD//xYAAAAJAAQAAAABABYAAAAFAAMAAAD7/w4AAAAJAAUAAAAKABQAAAAFAAMAAAAVABYAAAAFAAMAAAAbAAgAAAAFAAMAAAAgAAgAAAAJAAUAAAAmABYAAAAJAAUAAAAiABYAAAAKAAIAAAAjABYAAAAFAAQAAAASABIAAAAFAAQAAAAYAAwAAAAFAAQAABAWABIAAAAFAAMAABAaAAMAAAAFAAMAABAMAAUAAAAFAAMAABALAA4AAAAFAAMAABAZABYAAAAJAAUAAAAOAAoAAAAIAAAAAAAOAAUAAAAIAAAAAAD7/wwAAAAIAAAAAAD8/xMAAAAIAAAAAAAYABQAAAAIAAAAAAAlABIAAAAIAAAAAAAmAAoAAAAIAAAAAAAlAAEAAAAIAAAAAAATAAEAAAAIAAEAAAAFAAEAAAAIAAEAAAAGAA8AAAAIAAEAAAAbABAAAAAIAAEAAAAcABAAAAAKAAEAAAAcABEAAAAKAAAAAAAmABEAAAAKAAAAAAAPABAAAAAKAAAAAAAQABAAAAAKAAAAAAD6/xIAAAAKAAAAAAD8/woAAAAKAAAAAAD7/woAAAAKAAEAAAAFAAIAAAAKAAEAAAASAAEAAAAKAAEAAAASAAIAAAAIAAEAAAAmAAIAAAAIAAEAAAAUAAkAAAAIAAEAAAD8/xIAAAAIAAEAAAA=")
 tile_set = ExtResource("1_6mu4h")
 
-[node name="Spawnpoint" type="Marker2D" parent="."]
+[node name="Start" parent="." instance=ExtResource("6_6mu4h")]
 position = Vector2(152, 128)
 
 [node name="Player" parent="." instance=ExtResource("5_hv5wv")]
@@ -92,5 +93,5 @@ color = 1
 [node name="Crate4" parent="." instance=ExtResource("7_3ipdw")]
 position = Vector2(472, 336)
 
-[node name="Finish" parent="." instance=ExtResource("6_6mu4h")]
-position = Vector2(656, 288)
+[node name="Finish" parent="." instance=ExtResource("10_f3nwb")]
+position = Vector2(656, 304)

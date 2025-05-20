@@ -13,11 +13,11 @@ var spine_scene = preload("res://Scenes/Objects/Spine.tscn")
 var action_in_progress = false
 var direction = 1
 var nearby_corpse = null
-var spawnpoint: Marker2D
+var spawnpoint: Area2D
 
 
 func _ready():
-	spawnpoint = get_parent().get_node("Spawnpoint")
+	spawnpoint = get_parent().get_node("Start")
 	update_corpse_collision(shell_type)
 
 

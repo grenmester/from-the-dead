@@ -1,21 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://p2b4ew35erm5"]
+[gd_scene load_steps=4 format=3 uid="uid://b86fs5mnvwt2c"]
 
 [ext_resource type="Script" uid="uid://c1dustuir10bb" path="res://Scripts/Finish.gd" id="1_mts7w"]
 [ext_resource type="Texture2D" uid="uid://clk6u2nwcg58s" path="res://Assets/sprites.png" id="2_mts7w"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mts7w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ohmg"]
 size = Vector2(32, 32)
 
-[node name="Finish" type="Area2D"]
+[node name="Start" type="Area2D"]
 script = ExtResource("1_mts7w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
 texture = ExtResource("2_mts7w")
 region_enabled = true
-region_rect = Rect2(176, 64, 64, 64)
+region_rect = Rect2(240, 64, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_mts7w")
+shape = SubResource("RectangleShape2D_3ohmg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

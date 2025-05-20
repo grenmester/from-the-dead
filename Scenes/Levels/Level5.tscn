@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_2hhi4"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="2_agfdu"]
-[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Finish.tscn" id="3_d7gg6"]
+[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Start.tscn" id="3_d7gg6"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="4_1us0t"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="5_hy6wf"]
 [ext_resource type="PackedScene" uid="uid://ylygkknlk1hx" path="res://Scenes/Pufferfish.tscn" id="6_bvsh1"]
@@ -20,11 +20,11 @@ zoom = Vector2(2, 2)
 [node name="Player" parent="." instance=ExtResource("2_agfdu")]
 position = Vector2(144, 384)
 
-[node name="Spawnpoint" type="Marker2D" parent="."]
+[node name="Start" parent="." instance=ExtResource("3_d7gg6")]
 position = Vector2(144, 384)
 
 [node name="Finish" parent="." instance=ExtResource("3_d7gg6")]
-position = Vector2(719, 368)
+position = Vector2(720, 384)
 
 [node name="Button" parent="." instance=ExtResource("4_1us0t")]
 position = Vector2(616, 392)

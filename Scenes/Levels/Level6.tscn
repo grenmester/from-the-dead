@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://dqikmvxyjg1xc"]
+[gd_scene load_steps=11 format=4 uid="uid://dqikmvxyjg1xc"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_lvllu"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="2_iqc0i"]
 [ext_resource type="PackedScene" uid="uid://cc5807wn2any5" path="res://Scenes/Objects/Trapdoor.tscn" id="3_a8aqt"]
+[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Start.tscn" id="3_bkrib"]
 [ext_resource type="PackedScene" uid="uid://dh3mvfxlhqiid" path="res://Scenes/Objects/Crate.tscn" id="4_8a64g"]
 [ext_resource type="PackedScene" uid="uid://c1jrtf0lco2ct" path="res://Scenes/Objects/Mine.tscn" id="5_bkrib"]
-[ext_resource type="PackedScene" uid="uid://bxcou5j22og1i" path="res://Scenes/Objects/Rope.tscn" id="6_dn4hu"]
+[ext_resource type="PackedScene" uid="uid://cd0xc3760xpj3" path="res://Scenes/Objects/Rope.tscn" id="6_dn4hu"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="7_iqc0i"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/Finish.tscn" id="8_a8aqt"]
+[ext_resource type="PackedScene" uid="uid://p2b4ew35erm5" path="res://Scenes/Objects/Finish.tscn" id="8_a8aqt"]
 [ext_resource type="PackedScene" uid="uid://clntwxk4k47vb" path="res://Scenes/Swordfish.tscn" id="9_8a64g"]
 
 [node name="Level6" type="Node2D"]
@@ -21,10 +22,10 @@ anchor_mode = 0
 zoom = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("2_iqc0i")]
-position = Vector2(66, 385)
+position = Vector2(136, 384)
 
-[node name="Spawnpoint" type="Marker2D" parent="."]
-position = Vector2(66, 385)
+[node name="Start" parent="." instance=ExtResource("3_bkrib")]
+position = Vector2(136, 384)
 
 [node name="Trapdoor" parent="." instance=ExtResource("3_a8aqt")]
 position = Vector2(344, 93)
@@ -72,7 +73,7 @@ position = Vector2(648, 308)
 color = 1
 
 [node name="Finish" parent="." instance=ExtResource("8_a8aqt")]
-position = Vector2(265, 368)
+position = Vector2(264, 384)
 
 [node name="Swordfish" parent="." instance=ExtResource("9_8a64g")]
 position = Vector2(440, 271)

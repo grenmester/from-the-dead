@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://dtabhv75sujj3"]
+[gd_scene load_steps=11 format=4 uid="uid://847vyh4e01r0"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_4rk67"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="2_f8qf7"]
 [ext_resource type="PackedScene" uid="uid://cc5807wn2any5" path="res://Scenes/Objects/Trapdoor.tscn" id="3_5iseo"]
+[ext_resource type="PackedScene" uid="uid://b86fs5mnvwt2c" path="res://Scenes/Objects/Start.tscn" id="3_ipaot"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="3_lmdar"]
 [ext_resource type="PackedScene" uid="uid://catflm4xdjh7e" path="res://Scenes/Objects/Corpse.tscn" id="4_d1swa"]
 [ext_resource type="PackedScene" uid="uid://c1jrtf0lco2ct" path="res://Scenes/Objects/Mine.tscn" id="5_4rk67"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="5_ipaot"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/Finish.tscn" id="6_ao4h1"]
+[ext_resource type="PackedScene" uid="uid://p2b4ew35erm5" path="res://Scenes/Objects/Finish.tscn" id="6_ao4h1"]
 [ext_resource type="PackedScene" uid="uid://dh3mvfxlhqiid" path="res://Scenes/Objects/Crate.tscn" id="9_d1swa"]
 
 [node name="Level2" type="Node2D"]
@@ -21,10 +22,10 @@ anchor_mode = 0
 zoom = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("2_f8qf7")]
-position = Vector2(66, 386)
+position = Vector2(88, 384)
 
-[node name="Spawnpoint" type="Marker2D" parent="."]
-position = Vector2(66, 386)
+[node name="Start" parent="." instance=ExtResource("3_ipaot")]
+position = Vector2(88, 384)
 
 [node name="Trapdoor" parent="." instance=ExtResource("3_5iseo")]
 position = Vector2(344, 88)
@@ -55,7 +56,7 @@ position = Vector2(344, 288)
 type = 2
 
 [node name="Finish" parent="." instance=ExtResource("6_ao4h1")]
-position = Vector2(712, 192)
+position = Vector2(712, 208)
 
 [node name="Trapdoor3" parent="." instance=ExtResource("3_5iseo")]
 position = Vector2(552, 88)
