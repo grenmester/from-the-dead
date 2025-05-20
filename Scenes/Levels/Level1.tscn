@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://bh0jpxgatxxap"]
+[gd_scene load_steps=12 format=4 uid="uid://bh0jpxgatxxap"]
 
 [ext_resource type="TileSet" uid="uid://ggkv3qkr6w05" path="res://Assets/Tileset.tres" id="1_6mu4h"]
+[ext_resource type="PackedScene" uid="uid://b2w87actoiqyi" path="res://Scenes/Levels/Background.tscn" id="1_57lp3"]
 [ext_resource type="PackedScene" uid="uid://n486i6qibn2m" path="res://Scenes/Objects/Button.tscn" id="2_bw5bs"]
 [ext_resource type="PackedScene" uid="uid://ui4i05cnwa0s" path="res://Scenes/Objects/Door.tscn" id="3_rxfvv"]
 [ext_resource type="PackedScene" uid="uid://bjq5dgve27xuw" path="res://Scenes/Player.tscn" id="5_hv5wv"]
@@ -12,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://p2b4ew35erm5" path="res://Scenes/Objects/Finish.tscn" id="10_f3nwb"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_57lp3")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
